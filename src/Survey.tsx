@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import TimezoneField from './TimezoneField';
+import TechPreferenceField from './TechPreferenceField';
 
 export function Survey() {
   return (
@@ -13,17 +14,18 @@ export function Survey() {
         <Typography variant="h4" component="h1" gutterBottom>
           Koneksa Survey
         </Typography>
-        <Grid container direction="column" spacing={2}>
+        <Grid container direction="column" spacing={4}>
           <Grid item>
-            <TextField required label="Name" />
+            <TextField required label="Name" variant="standard" />
           </Grid>
           <Grid item>
-            <TextField required label="Password" type="password" />
+            <TextField required label="Password" type="password" variant="standard" />
           </Grid>
           <Grid item>
             <TextField
               label="Birthday"
               type="date"
+              variant="standard"
               InputLabelProps={{
                 shrink: true,
               }}
@@ -33,6 +35,9 @@ export function Survey() {
             <TimezoneField
               label="Timezone"
             />
+          </Grid>
+          <Grid item>
+            <TechPreferenceField />
           </Grid>
         </Grid>
       </Box>

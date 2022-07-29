@@ -9,10 +9,9 @@ type TimezoneFieldProps = {
 const options = timezones.map(({ label, tzCode }) => ({ label, id: tzCode }))
 
 const TimezoneField = ({ label }: TimezoneFieldProps) => {
-  console.log(timezones)
   return <Autocomplete
     options={options}
-    renderInput={(params) => <TextField {...params} label={label} />}
+    renderInput={(params) => <TextField {...params} label={label} variant="standard" />}
   />
 }
 
