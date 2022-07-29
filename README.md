@@ -13,6 +13,8 @@ yarn start
 yarn test
 ```
 
-### Code formatting
+### Before you create a PR
 
-Run `yarn fix:format` or install the `esbenp.prettier-vscode` extension in VS Code.
+Run `yarn fix:format` to fix the source formatting. You can also install the `esbenp.prettier-vscode` extension in VS Code to format-on-save.
+
+Run `yarn check:types` to make sure the types are OK.

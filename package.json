@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "react-scripts start",
+    "check:types": "tsc --noEmit",
     "build": "react-scripts build",
     "fix:format": "prettier --write --ignore-path .gitignore .",
     "test": "react-scripts test",
