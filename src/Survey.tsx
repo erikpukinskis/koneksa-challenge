@@ -11,7 +11,7 @@ export function Survey() {
         <Typography variant="h4" component="h1" gutterBottom>
           Koneksa Survey
         </Typography>
-        <Typography variant="body" component="p">
+        <Typography variant="body1" component="p">
           Hello, wordle
         </Typography>
       </Box>
