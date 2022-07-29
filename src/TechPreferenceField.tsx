@@ -5,7 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 
 const TechPreferenceField = () => {
-  return <FormControl variant="outlined">
+  return <FormControl>
     <FormLabel htmlFor="tech-preference">Gender</FormLabel>
     <RadioGroup
       id="tech-preference"

@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import TimezoneField from './TimezoneField';
 import TechPreferenceField from './TechPreferenceField';
+import PizzaToppingsField from './PizzaToppingsField';
 
 export function Survey() {
   return (
@@ -38,6 +39,9 @@ export function Survey() {
           </Grid>
           <Grid item>
             <TechPreferenceField />
+          </Grid>
+          <Grid item>
+            <PizzaToppingsField />
           </Grid>
         </Grid>
       </Box>
