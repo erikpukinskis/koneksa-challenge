@@ -1,14 +1,18 @@
 # Erik Pukinskis / Koneksa React Coding Challenge
 
-Install and run:
+### Starting the dev server
 
 ```sh
 yarn install
-tarn start
+yarn start
 ```
 
-Run the tests:
+### Running tests
 
 ```
 yarn test
 ```
+
+### Code formatting
+
+Run `yarn fix:format` or install the `esbenp.prettier-vscode` extension in VS Code.

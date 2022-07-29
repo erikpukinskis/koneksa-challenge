@@ -1,13 +1,13 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import TimezoneField from './TimezoneField';
-import TechPreferenceField from './TechPreferenceField';
-import PizzaToppingsField from './PizzaToppingsField';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import TimezoneField from "./TimezoneField";
+import TechPreferenceField from "./TechPreferenceField";
+import PizzaToppingsField from "./PizzaToppingsField";
+import Button from "@mui/material/Button";
 
 export function Survey() {
   return (
@@ -21,7 +21,12 @@ export function Survey() {
             <TextField required label="Name" variant="standard" />
           </Grid>
           <Grid item>
-            <TextField required label="Password" type="password" variant="standard" />
+            <TextField
+              required
+              label="Password"
+              type="password"
+              variant="standard"
+            />
           </Grid>
           <Grid item>
             <TextField
@@ -34,9 +39,7 @@ export function Survey() {
             />
           </Grid>
           <Grid item>
-            <TimezoneField
-              label="Timezone"
-            />
+            <TimezoneField label="Timezone" />
           </Grid>
           <Grid item>
             <TechPreferenceField />
