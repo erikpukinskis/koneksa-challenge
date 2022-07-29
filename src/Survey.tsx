@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import FormGroup from '@mui/material/FormGroup';
+import Grid from '@mui/material/Grid';
 
 export function Survey() {
   return (
@@ -12,11 +12,24 @@ export function Survey() {
         <Typography variant="h4" component="h1" gutterBottom>
           Koneksa Survey
         </Typography>
-
-        <FormGroup>
-          <TextField required label="Name" />
-          <TextField required label="Password" type="password" />
-        </FormGroup>
+        <Grid container direction="column" spacing={2}>
+          <Grid item>
+            <TextField required label="Name" />
+          </Grid>
+          <Grid item>
+            <TextField required label="Password" type="password" />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="date"
+              label="Birthday"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </Container>
   );
