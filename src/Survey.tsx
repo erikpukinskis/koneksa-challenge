@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import TimezoneField from './TimezoneField';
 
 export function Survey() {
   return (
@@ -21,12 +22,16 @@ export function Survey() {
           </Grid>
           <Grid item>
             <TextField
-              id="date"
               label="Birthday"
               type="date"
               InputLabelProps={{
                 shrink: true,
               }}
+            />
+          </Grid>
+          <Grid item>
+            <TimezoneField
+              label="Timezone"
             />
           </Grid>
         </Grid>

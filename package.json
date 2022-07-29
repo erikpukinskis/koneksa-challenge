@@ -11,7 +11,8 @@
     "@mui/material": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "timezones-list": "^3.0.1"
   },
   "devDependencies": {
     "@mui/types": "^7.1.5",
