@@ -99,4 +99,15 @@ describe("Survey", () => {
 
     expect(requestBody).toHaveProperty("birthday", "1981-01-01");
   });
+
+  it("submits a tech preference", async () => {
+    const { getByLabelText } = render(<Survey />);
+
+    const both = await getByLabelText("Both");
+    await userEvent.click(both);
+
+    await submit();
+
+    expect(requestBody).toHaveProperty("techPref", "both");
+  });
 });

@@ -1,3 +1,4 @@
+import { type ChangeEvent } from "react";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -10,21 +11,30 @@ type TechPreferenceFieldProps = {
 };
 
 const TechPreferenceField = ({ value, onChange }: TechPreferenceFieldProps) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value);
+  };
+
   return (
     <FormControl>
       <FormLabel htmlFor="tech-preference">Gender</FormLabel>
       <RadioGroup
         id="tech-preference"
-        aria-labelledby="tech-preference-field-label"
+        value={value}
+        onChange={handleChange}
         row
       >
         <FormControlLabel
-          value="female"
+          value="front end"
           control={<Radio />}
-          label="front end"
+          label="Front end"
         />
-        <FormControlLabel value="male" control={<Radio />} label="back end" />
-        <FormControlLabel value="other" control={<Radio />} label="both" />
+        <FormControlLabel
+          value="back end"
+          control={<Radio />}
+          label="Back end"
+        />
+        <FormControlLabel value="both" control={<Radio />} label="Both" />
       </RadioGroup>
     </FormControl>
   );
