@@ -1,4 +1,4 @@
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, waitFor, screen, fireEvent } from "@testing-library/react";
 import { Survey } from "./Survey";
 import userEvent from "@testing-library/user-event";
 import { setupServer, type SetupServerApi } from "msw/node";
@@ -82,5 +82,21 @@ describe("Survey", () => {
     expect(requestBody).toHaveProperty("name", "Erik P");
 
     expect(requestBody).toHaveProperty("password", "pass0rdw-");
+  });
+
+  it("submits birthday", async () => {
+    const { getByLabelText } = render(<Survey />);
+
+    const birthday = await getByLabelText("Birthday");
+
+    // This isn't an ideal test, since it just triggers the onChange and does an
+    // end-run around the interaction mechanics of input[type=date]. In the long
+    // run it might be best to use a third party calendar component that works
+    // with with Testing Library.
+    await fireEvent.change(birthday, { target: { value: "1981-01-01" } });
+
+    await submit();
+
+    expect(requestBody).toHaveProperty("birthday", "1981-01-01");
   });
 });

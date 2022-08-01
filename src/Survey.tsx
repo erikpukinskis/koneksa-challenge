@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -8,6 +8,7 @@ import TimezoneField from "./TimezoneField";
 import TechPreferenceField from "./TechPreferenceField";
 import PizzaToppingsField from "./PizzaToppingsField";
 import Button from "@mui/material/Button";
+import { DateField } from "./DateField";
 
 export const Survey = () => {
   const [name, setName] = useState("");
@@ -57,15 +58,10 @@ export const Survey = () => {
             />
           </Grid>
           <Grid item>
-            <TextField
+            <DateField
               label="Birthday"
-              type="date"
               value={birthday}
-              onChange={getChangeHandler(setBirthday)}
-              variant="standard"
-              InputLabelProps={{
-                shrink: true,
-              }}
+              onChange={setBirthday}
             />
           </Grid>
           <Grid item>
@@ -97,5 +93,5 @@ export const Survey = () => {
 
 const getChangeHandler =
   (callback: (value: string) => void) =>
-  (event: React.ChangeEvent<HTMLInputElement>) =>
+  (event: ChangeEvent<HTMLInputElement>) =>
     callback(event.target.value);
