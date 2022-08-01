@@ -17,7 +17,7 @@ const TechPreferenceField = ({ value, onChange }: TechPreferenceFieldProps) => {
 
   return (
     <FormControl>
-      <FormLabel htmlFor="tech-preference">Gender</FormLabel>
+      <FormLabel htmlFor="tech-preference">Tech Preference</FormLabel>
       <RadioGroup
         id="tech-preference"
         value={value || null}
