@@ -1,5 +1,7 @@
 # Erik Pukinskis / Koneksa React Coding Challenge
 
+[Requirements](https://gist.github.com/micah-koneksa/af8563f3345e914cac86d37a7083a0f5)
+
 ![Screenshot of survey](screenshot.png)
 
 ## Starting the dev server
