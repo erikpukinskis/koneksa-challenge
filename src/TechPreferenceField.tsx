@@ -4,7 +4,12 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 
-const TechPreferenceField = () => {
+type TechPreferenceFieldProps = {
+  value: string;
+  onChange(value: string): void;
+};
+
+const TechPreferenceField = ({ value, onChange }: TechPreferenceFieldProps) => {
   return (
     <FormControl>
       <FormLabel htmlFor="tech-preference">Gender</FormLabel>

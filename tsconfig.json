@@ -2,6 +2,7 @@
   "include": ["src"],
   "compilerOptions": {
     "strict": true,
+    "noImplicitAny": true,
     "esModuleInterop": true,
     "jsx": "react-jsx"
   }

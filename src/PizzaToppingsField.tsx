@@ -47,8 +47,12 @@ const TOPPINGS = [
   "Tomatos",
 ];
 
-const PizzaToppingsField = () => {
-  const handleChange = () => {};
+type PizzaToppingsFieldProps = {
+  value: string[];
+  onChange(value: string[]): void;
+};
+
+const PizzaToppingsField = ({ value, onChange }: PizzaToppingsFieldProps) => {
   return (
     <FormControl>
       <FormLabel component="legend">Pizza Toppings</FormLabel>

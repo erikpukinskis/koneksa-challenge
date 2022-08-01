@@ -4,6 +4,8 @@ import timezones from "timezones-list";
 
 type TimezoneFieldProps = {
   label: string;
+  value: string;
+  onChange(value: string): void;
 };
 
 const options = timezones.map(({ label, tzCode }) => ({ label, id: tzCode }));
