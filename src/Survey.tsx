@@ -105,12 +105,12 @@ const getChangeHandler =
  * strings in state because that's a good representation of how inputs work, but
  * when we go to the server we want to be more explicit these are null values.
  */
-const nullEmptyStrings = (record: Record<string,unknown>) => {
-  const nulls = {} as Record<string,null>
-  for(const key in record) {
+const nullEmptyStrings = (record: Record<string, unknown>) => {
+  const nulls = {} as Record<string, null>;
+  for (const key in record) {
     if (record[key] === "") {
-      nulls[key] = null
+      nulls[key] = null;
     }
   }
-  return { ...record, ...nulls }
-}
+  return { ...record, ...nulls };
+};
