@@ -19,14 +19,14 @@ export const Survey = () => {
   const [pizzaToppings, setPizzaToppings] = useState([] as string[]);
 
   const submit = async () => {
-    const body = {
+    const body = nullEmptyStrings({
       name,
       password,
       birthday,
       timezone,
       techPref,
       pizzaToppings,
-    };
+    });
     const response = await fetch("/survey", {
       method: "POST",
       body: JSON.stringify(body, null, 2),
@@ -91,7 +91,26 @@ export const Survey = () => {
   );
 };
 
+/**
+ * Convenience function that grabs the value off of the event target and passes
+ * it to a callback. Makes it easy to pass a React state handler to an onChange.
+ */
 const getChangeHandler =
   (callback: (value: string) => void) =>
   (event: ChangeEvent<HTMLInputElement>) =>
     callback(event.target.value);
+
+/**
+ * Replace all empty string values on an object with nulls. We keep empty
+ * strings in state because that's a good representation of how inputs work, but
+ * when we go to the server we want to be more explicit these are null values.
+ */
+const nullEmptyStrings = (record: Record<string,unknown>) => {
+  const nulls = {} as Record<string,null>
+  for(const key in record) {
+    if (record[key] === "") {
+      nulls[key] = null
+    }
+  }
+  return { ...record, ...nulls }
+}
