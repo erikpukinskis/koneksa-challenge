@@ -3,13 +3,12 @@ import TextField from "@mui/material/TextField";
 
 type DateFieldProps = {
   label: string;
-  value: string | undefined;
+  value: string;
   onChange: (date: string) => void;
 };
 
 export const DateField = ({ label, value, onChange }: DateFieldProps) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("new value is", event.target.value);
     onChange(event.target.value);
   };
 

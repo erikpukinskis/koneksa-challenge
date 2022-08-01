@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 
 type TechPreferenceFieldProps = {
-  value: string | undefined;
+  value: string;
   onChange(value: string): void;
 };
 
@@ -20,7 +20,7 @@ const TechPreferenceField = ({ value, onChange }: TechPreferenceFieldProps) => {
       <FormLabel htmlFor="tech-preference">Gender</FormLabel>
       <RadioGroup
         id="tech-preference"
-        value={value}
+        value={value || null}
         onChange={handleChange}
         row
       >

@@ -4,8 +4,8 @@ import timezones from "timezones-list";
 
 type TimezoneFieldProps = {
   label: string;
-  value: string | undefined;
-  onChange(value?: string): void;
+  value: string;
+  onChange(value: string): void;
 };
 
 type Option = {
@@ -22,12 +22,7 @@ const TimezoneField = ({ label, value, onChange }: TimezoneFieldProps) => {
   const selected = OPTIONS.find(({ id }) => id === value);
 
   const handleChange = (_: unknown, option: Option | null) => {
-    if (option === null) {
-      onChange();
-      return;
-    }
-    console.log("option", option.id);
-    onChange(option.id);
+    onChange(option ? option.id : "");
   };
 
   return (
