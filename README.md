@@ -41,7 +41,7 @@ Right now the structure is very flat, which is good for such a small app. But if
 
 I don't like relative imports, so this would require adding some import aliases, like:
 
-```
+```ts
 import { DateField } from '@/components';
 import { chooseFromAutocomplete } from '@/utils/testHelpers';
 ```
