@@ -1,16 +1,19 @@
 {
   "scripts": {
-    "start": "react-scripts start",
-    "check:types": "tsc --noEmit",
     "build": "react-scripts build",
+    "check:types": "tsc --noEmit",
+    "eject": "react-scripts eject",
     "fix:format": "prettier --write --ignore-path .gitignore .",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/material": "latest",
+    "@types/jest": "^28.1.6",
+    "@types/lodash": "^4.14.182",
+    "lodash": "^4.17.21",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest",
@@ -18,8 +21,11 @@
   },
   "devDependencies": {
     "@mui/types": "^7.1.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.3.0",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "msw": "^0.44.2",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },

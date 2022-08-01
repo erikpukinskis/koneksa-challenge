@@ -1,9 +1,11 @@
+import { useState, type ChangeEvent } from "react";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import FormGroup from "@mui/material/FormGroup";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
+import without from "lodash/without";
 
 const TOPPINGS = [
   "Anchovy",
@@ -52,16 +54,32 @@ type PizzaToppingsFieldProps = {
   onChange(value: string[]): void;
 };
 
-const PizzaToppingsField = ({ value, onChange }: PizzaToppingsFieldProps) => {
+const PizzaToppingsField = ({
+  value: toppings,
+  onChange,
+}: PizzaToppingsFieldProps) => {
+  const updateTopping =
+    (topping: string) => (event: ChangeEvent<HTMLInputElement>) => {
+      const newToppings = event.target.checked
+        ? [...toppings, topping]
+        : without(toppings, topping);
+      onChange(newToppings);
+    };
+
   return (
     <FormControl>
       <FormLabel component="legend">Pizza Toppings</FormLabel>
       <FormGroup>
         <Grid container wrap="wrap" spacing={2}>
           {TOPPINGS.map((topping) => (
-            <Grid item xs={6} sm={4}>
+            <Grid item xs={6} sm={4} key={topping}>
               <FormControlLabel
-                control={<Checkbox checked={false} onChange={handleChange} />}
+                control={
+                  <Checkbox
+                    checked={toppings.includes(topping)}
+                    onChange={updateTopping(topping)}
+                  />
+                }
                 label={topping}
               />
             </Grid>

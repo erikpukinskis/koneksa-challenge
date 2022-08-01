@@ -9,13 +9,28 @@ import TechPreferenceField from "./TechPreferenceField";
 import PizzaToppingsField from "./PizzaToppingsField";
 import Button from "@mui/material/Button";
 
-export function Survey() {
+export const Survey = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [birthday, setBirthday] = useState("");
   const [timezone, setTimezone] = useState("");
   const [techPref, setTechPref] = useState("");
   const [pizzaToppings, setPizzaToppings] = useState([] as string[]);
+
+  const submit = async () => {
+    const body = {
+      name,
+      password,
+      birthday,
+      timezone,
+      techPref,
+      pizzaToppings,
+    };
+    const response = await fetch("/survey", {
+      method: "POST",
+      body: JSON.stringify(body, null, 2),
+    });
+  };
 
   return (
     <Container maxWidth="sm">
@@ -70,13 +85,15 @@ export function Survey() {
             />
           </Grid>
           <Grid item>
-            <Button variant="contained">Submit</Button>
+            <Button variant="contained" onClick={submit}>
+              Submit
+            </Button>
           </Grid>
         </Grid>
       </Box>
     </Container>
   );
-}
+};
 
 const getChangeHandler =
   (callback: (value: string) => void) =>
