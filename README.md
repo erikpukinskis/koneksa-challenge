@@ -2,7 +2,7 @@
 
 [Requirements](https://gist.github.com/micah-koneksa/af8563f3345e914cac86d37a7083a0f5)
 
-![Screenshot of survey](screenshot.png)
+<a href="https://raw.githubusercontent.com/erikpukinskis/koneksa-challenge/main/screenshot.png"><img width="500" src="https://raw.githubusercontent.com/erikpukinskis/koneksa-challenge/main/screenshot.png" alt="Screenshot of survey" /></a>
 
 ## Starting the dev server
 
