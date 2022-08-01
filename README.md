@@ -1,5 +1,7 @@
 # Erik Pukinskis / Koneksa React Coding Challenge
 
+![Screenshot of survey](screenshot.png)
+
 ## Starting the dev server
 
 ```sh
