@@ -1,4 +1,10 @@
-import { render, waitFor, screen, fireEvent } from "@testing-library/react";
+import {
+  render,
+  waitFor,
+  screen,
+  fireEvent,
+  within,
+} from "@testing-library/react";
 import { Survey } from "./Survey";
 import userEvent from "@testing-library/user-event";
 import { setupServer, type SetupServerApi } from "msw/node";
@@ -110,4 +116,25 @@ describe("Survey", () => {
 
     expect(requestBody).toHaveProperty("techPref", "both");
   });
+
+  it("submits timezone", async () => {
+    render(<Survey />);
+
+    await chooseFromAutocomplete("Timezone", /Pacific\/Honolulu/);
+
+    await submit();
+
+    expect(requestBody).toHaveProperty("timezone", "Pacific/Honolulu");
+  });
 });
+
+// Adapted from https://juliuskoronci.medium.com/react-testing-library-portals-mui-autocomplete-14f3bceec21
+const chooseFromAutocomplete = async (
+  autocompleteLabel: string,
+  optionLabel: RegExp
+) => {
+  const autocomplete = await screen.getByLabelText(autocompleteLabel);
+  fireEvent.mouseDown(autocomplete);
+  const option = within(document.body).getByText(optionLabel);
+  fireEvent.click(option);
+};

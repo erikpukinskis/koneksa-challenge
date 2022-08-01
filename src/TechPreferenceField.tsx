@@ -6,7 +6,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 
 type TechPreferenceFieldProps = {
-  value: string;
+  value: string | undefined;
   onChange(value: string): void;
 };
 

@@ -11,11 +11,11 @@ import Button from "@mui/material/Button";
 import { DateField } from "./DateField";
 
 export const Survey = () => {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [timezone, setTimezone] = useState("");
-  const [techPref, setTechPref] = useState("");
+  const [name, setName] = useState<string | undefined>();
+  const [password, setPassword] = useState<string | undefined>();
+  const [birthday, setBirthday] = useState<string | undefined>();
+  const [timezone, setTimezone] = useState<string | undefined>();
+  const [techPref, setTechPref] = useState<string | undefined>();
   const [pizzaToppings, setPizzaToppings] = useState([] as string[]);
 
   const submit = async () => {

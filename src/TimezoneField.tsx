@@ -4,16 +4,37 @@ import timezones from "timezones-list";
 
 type TimezoneFieldProps = {
   label: string;
-  value: string;
-  onChange(value: string): void;
+  value: string | undefined;
+  onChange(value?: string): void;
 };
 
-const options = timezones.map(({ label, tzCode }) => ({ label, id: tzCode }));
+type Option = {
+  label: string;
+  id: string;
+};
 
-const TimezoneField = ({ label }: TimezoneFieldProps) => {
+const OPTIONS = timezones.map<Option>(({ label, tzCode }) => ({
+  label,
+  id: tzCode,
+}));
+
+const TimezoneField = ({ label, value, onChange }: TimezoneFieldProps) => {
+  const selected = OPTIONS.find(({ id }) => id === value);
+
+  const handleChange = (_: unknown, option: Option | null) => {
+    if (option === null) {
+      onChange();
+      return;
+    }
+    console.log("option", option.id);
+    onChange(option.id);
+  };
+
   return (
     <Autocomplete
-      options={options}
+      options={OPTIONS}
+      value={selected || null}
+      onChange={handleChange}
       renderInput={(params) => (
         <TextField {...params} label={label} variant="standard" />
       )}

@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 
 type DateFieldProps = {
   label: string;
-  value: string;
+  value: string | undefined;
   onChange: (date: string) => void;
 };
 
